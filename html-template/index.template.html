@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+    <!-- 
+    Smart developers always View Source. 
+    
+    This application was built using Adobe Flex, an open source framework
+    for building rich Internet applications that get delivered via the
+    Flash Player or to desktops via Adobe AIR. 
+    
+    Learn more about Flex at http://flex.org 
+    // -->
+    <head>
+        <title>${title}</title>
+        <meta name="google" value="notranslate" />         
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Include CSS to eliminate any default margins/padding and set the height of the html element and 
+             the body element to 100%, because Firefox, or any Gecko based browser, interprets percentage as 
+             the percentage of the height of its parent container, which has to be set explicitly.  Fix for
+             Firefox 3.6 focus border issues.  Initially, don't display flashContent div so it won't show 
+             if JavaScript disabled.
+        -->
+        <style type="text/css" media="screen"> 
+            html, body  { height:100%; }
+            body { margin:0; padding:0; overflow:auto; text-align:center; 
+                   background-color: ${bgcolor}; }   
+            object:focus { outline:none; }
+            #flashContent { display:none; }
+        </style>
+        
+        <!-- Enable Browser History by replacing useBrowserHistory tokens with two hyphens -->
+        <!-- BEGIN Browser History required section ${useBrowserHistory}>
+        <link rel="stylesheet" type="text/css" href="history/history.css" />
+        <script type="text/javascript" src="history/history.js"></script>
+        <!${useBrowserHistory} END Browser History required section -->  
+            
+        <script type="text/javascript" src="jwplayer.min.js"></script>
+    </head>
+    <body>
+        <!-- SWFObject's dynamic embed method replaces this alternative HTML content with Flash content when enough 
+             JavaScript and Flash plug-in support is available. The div is initially hidden so that it doesn't show
+             when JavaScript is disabled.
+        -->
+       <div id="container">Loading the player ...</div>
+
+		<script type="text/javascript">
+				jwplayer("container").setup({
+				//flashplayer: "sbplayer.swf",
+				file:'file.xml',
+				controlbar:'bottom',
+				debug:'console',
+				skin:'http://webils.ru/app/player/ruskin/ruskin.xml',
+				height: 340,
+				width: 560,
+				modes: [
+							{ type: "html5",
+              					config: {
+                					file: "http://dementievs-wedding.ru/zapredel360.mp4",
+                					plugins: {
+         										'../js/timeslidertooltipplugin.js':{}
+       					 					},
+             							}
+     			       },
+         				   { type: "flash", 
+             					 src: "sbplayer.swf", 
+					             config: {
+                							file: "http://dementievs-wedding.ru/zapredel360.mp4",
+                							plugins: {
+         										'hd.swf':{
+         												'files_360p':'http://dementievs-wedding.ru/zapredel360.mp4',
+         							  					'files_720p':'http://dementievs-wedding.ru/zapredel720.mp4'
+ 														},
+         										'Header.swf':{
+														'author':'Вася Пупкин',
+														'title':'SWFObjects dynamic embed method replaces this alternative HTML content with Flash content',
+														'author_link':'http://ya.ru',
+														'title_link':'http://google.com',
+														'related':'true'
+														},
+         										'RussiaSport.swf': {'link':'http://russiasport.ru'},
+         										'TimeSliderTooltipPlugin.swf':{}
+       					 					},
+			
+               				             }
+            				}
+          					]
+		});
+		
+		
+				
+		</script>
+   </body>
+</html>
