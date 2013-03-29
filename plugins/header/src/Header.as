@@ -164,7 +164,7 @@ public class Header extends Sprite implements IPlugin
 				author_txt.selectable = false;
 				author_txt.defaultTextFormat = _tf;
 				author_txt.autoSize = TextFieldAutoSize.LEFT;
-                author_txt.embedFonts = true;
+              //  author_txt.embedFonts = true;
                 author_txt.antiAliasType = flash.text.AntiAliasType.ADVANCED;
 				author_txt.htmlText = '<a href="event:author">'+_config['author']+'</a>';
 				author_txt.y = 27;

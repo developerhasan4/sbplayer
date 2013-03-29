@@ -6,6 +6,7 @@ package com.longtailvideo.jwplayer.view.components
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	import flash.text.TextFormat;
+    import flash.text.Font;
 	
 	
 	public class RSButton extends MovieClip
@@ -33,25 +34,30 @@ package com.longtailvideo.jwplayer.view.components
 			super();
 			
 			_label = label;
-		
-			
+
+            var _font:Font = new font();
+
+            var tf:TextFormat = new TextFormat();
+            tf.color = 0x9a9a9a;
+            tf.kerning = true;
+            tf.font = font.fontName;
+            tf.letterSpacing = -0.7;
+            tf.size = 11;
+            tf.bold = true;
+
 			_txt = new TextField();
 			_txt.selectable = false;
             _txt.embedFonts = true;
             _txt.antiAliasType = flash.text.AntiAliasType.ADVANCED;
+           // _txt.thickness = 100;
+           // _txt.sharpness = 100;
 			_txt.x = hoffset;// + lineHeight;
 			_txt.y = voffset;// + lineHeight;
 //			_txt.textHeight = 22;
 			_txt.autoSize = TextFieldAutoSize.LEFT;
 			_txt.mouseEnabled = false;
-			
-			var tf:TextFormat = new TextFormat();
-			tf.color = 0x9a9a9a;
-			tf.kerning = true;
-			tf.font = font.fontName;
-			tf.letterSpacing = -0.7;
-			tf.size = 11;
-			tf.bold = true;
+			_txt.text = 'hello';
+
 			
 			_txt.defaultTextFormat = tf;
 			

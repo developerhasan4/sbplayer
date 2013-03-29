@@ -79,7 +79,6 @@ import flash.text.TextField;
 			
 			
 			text = new TextField();
-            text.embedFonts = true;
             text.antiAliasType = AntiAliasType.ADVANCED;
 			text.defaultTextFormat = _tf;
 			text.width = w - _xoffset;
